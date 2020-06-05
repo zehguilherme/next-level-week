@@ -24,6 +24,7 @@
 ## 🚀 Tecnologias
 
 ### Back-end
+- [NodeJS](https://nodejs.org/pt-br/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Insomnia](https://insomnia.rest/) - Auxiliar na realização de requisições Rest em vários tipos de rotas
 - [Express](https://expressjs.com/pt-br/) - Framework que lida com as rotas da aplicação
@@ -37,11 +38,24 @@
 - [Transactions](http://knexjs.org/#Transactions) - Transações
 - [Path](https://nodejs.org/api/path.html) - Biblioteca para lidar com caminhos de arquivo
 - [CORS](https://expressjs.com/en/resources/middleware/cors.html) - Define quais endereços web externos terão acesso a API
+- [API de estados do IBGE](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet)
+- [API de munícipios por estado](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet)
 
 ### Front-end
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [create-react-app](https://pt-br.reactjs.org/docs/create-a-new-react-app.html#create-react-app) - Criação do ambiente
+- [react-icons](https://react-icons.github.io/react-icons/) - Pacote de ícones
+- [Feather Icons](https://feathericons.com/) - Pacote de ícones
+- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - Rotas
+- [Leaflet](https://leafletjs.com/) - Mapa open source
+- [react-leaflet](https://react-leaflet.js.org/) - Biblioteca para integrar o Leaflet com o React
+- [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
 
 ### Mobile
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
 
 ## 🤔 Como contribuir
 - Faça um fork;

@@ -19,11 +19,13 @@
 </div>
 
 ## 🗒 Anotações
+
 - [Notion](https://www.notion.so/zehguilherme/Next-Level-Week-c537391f2b274fa28022a0c685f083ef)
 
 ## 🚀 Tecnologias
 
 ### Back-end
+
 - [NodeJS](https://nodejs.org/pt-br/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Insomnia](https://insomnia.rest/) - Auxiliar na realização de requisições Rest em vários tipos de rotas
@@ -40,8 +42,13 @@
 - [CORS](https://expressjs.com/en/resources/middleware/cors.html) - Define quais endereços web externos terão acesso a API
 - [API de estados do IBGE](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet)
 - [API de munícipios por estado](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet)
+- [Multer](https://www.npmjs.com/package/multer) - Lidar com upload de imagens
+- [Crypto](https://nodejs.org/api/crypto.html#crypto_crypto) - Gerar hash aleatório de dados
+- [Celebrate](https://github.com/arb/celebrate) - Validação de dados de entrada
+  - Baseado no [Joi](https://github.com/hapijs/joi)
 
 ### Front-end
+
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [create-react-app](https://pt-br.reactjs.org/docs/create-a-new-react-app.html#create-react-app) - Criação do ambiente
@@ -51,21 +58,36 @@
 - [Leaflet](https://leafletjs.com/) - Mapa open source
 - [react-leaflet](https://react-leaflet.js.org/) - Biblioteca para integrar o Leaflet com o React
 - [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
+- [React Dropzone](https://github.com/react-dropzone/react-dropzone) - Cria uma "box"  em que é possível arrastar arquivos para dentro dela
+- [Yup](https://github.com/jquense/yup) - Validação de dados de entrada
 
 ### Mobile
+
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Expo CLI](https://docs.expo.io/workflow/expo-cli/) - Possibilidade de executar comandos do Expo pelo terminal
 - [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
+- [Expo Google Fonts](https://github.com/expo/google-fonts) - Usar fontes do Google Fonts no Expo
+- [React Navigation](https://reactnavigation.org/docs/getting-started) - Biblioteca de navegação
+- [React Navigation Stack](https://reactnavigation.org/docs/stack-navigator/) - Navegação em formato de Pilha
+- [React Navigation Maps](https://github.com/react-native-community/react-native-maps) - Usar mapas
+- [Expo Constants](https://docs.expo.io/versions/latest/sdk/constants/) - Fornece informações do sistema que permanecem constantes durante toda a vida útil da instalação da aplicação.
+- [React Native SVG](https://github.com/react-native-community/react-native-svg) - Usar imagens SVG
+- [Expo Location](https://docs.expo.io/versions/latest/sdk/location/) - Localização geográfica
+- [MailComposer](https://docs.expo.io/versions/latest/sdk/mail-composer/) - Email no expo
+- [React native picker select](https://www.npmjs.com/package/react-native-picker-select) - Uso de select no mobile
 
 ## 🤔 Como contribuir
-- Faça um fork;
-- Crie um branch com a sua feature: `git checkout -b my-feature`;
-- Commit as mundanças: `git commit -m 'feat: My new feature'`;
-- Faça um push para seu branch: `git push origin my-feature`.
+
+1. Faça um Fork do projeto;
+2. Crie um branch com a sua feature: `git checkout -b my-feature`;
+3. Commit as mundanças: `git commit -m 'feat: My new feature'`;
+4. Faça um Push para seu branch: `git push origin my-feature`;
+5. Crie um Pull Request.
 
 ## 📝 Licensa
 
-Este projeto está sob a licensa MIT. Veja a [LICENSE](https://github.com/zehguilherme/next-level-week/blob/master/LICENSE) para mais informações.
+Este projeto está sob a licensa MIT. Veja a [licença](LICENSE) para mais informações.
 
 ---
 

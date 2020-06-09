@@ -19,7 +19,16 @@ class PointsController {
       .distinct()
       .select('points.*'); //Buscar apenas dados da tabela points
 
-    return response.json(points);
+    //As informações do banco não estão inicialmente da melhor maneira para que possam ser retornadas para o front-end, cliente
+    //O ato de transformar esses dados/informações para um novo formato que será mais acessível para quem está requisitando essas informações é chamado de serialização
+    const serializedPoints = points.map((point) => {
+      return {
+        ...point,
+        image_url: `http://192.168.2.108:3333/uploads/${point.image}`,
+      };
+    });
+
+    return response.json(serializedPoints);
   }
 
   // Listar um ponto de coleta específico
@@ -34,6 +43,11 @@ class PointsController {
       return response.status(400).json({ message: 'Point not found' });
     }
 
+    const serializedPoint = {
+      ...point,
+      image_url: `http://192.168.2.108:3333/uploads/${point.image}`,
+    };
+
     /**
      * Itens que estão relacionados ao ponto
      * SELECT * FROM items
@@ -46,7 +60,7 @@ class PointsController {
       .select('items.title');
 
     // Ponto encontrado
-    return response.json({ point, items });
+    return response.json({ point: serializedPoint, items });
   }
 
   // Criação de um ponto de coleta
@@ -66,7 +80,7 @@ class PointsController {
     const trx = await knex.transaction();
 
     const point = {
-      image: 'https://picsum.photos/200',
+      image: request.file.filename, //nome do arquivo
       name,
       email,
       whatsapp,
@@ -81,12 +95,15 @@ class PointsController {
 
     const point_id = insertedIds[0];
 
-    const pointItems = items.map((item_id: number) => {
-      return {
-        item_id,
-        point_id,
-      };
-    });
+    const pointItems = items
+      .split(',')
+      .map((item: string) => Number(item.trim()))
+      .map((item_id: number) => {
+        return {
+          item_id,
+          point_id,
+        };
+      });
 
     // Relacionamento com a tabela de itens
     await trx('point_items').insert(pointItems);

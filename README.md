@@ -19,11 +19,13 @@
 </div>
 
 ## 🗒 Anotações
+
 - [Notion](https://www.notion.so/zehguilherme/Next-Level-Week-c537391f2b274fa28022a0c685f083ef)
 
 ## 🚀 Tecnologias
 
 ### Back-end
+
 - [NodeJS](https://nodejs.org/pt-br/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Insomnia](https://insomnia.rest/) - Auxiliar na realização de requisições Rest em vários tipos de rotas
@@ -42,6 +44,7 @@
 - [API de munícipios por estado](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet)
 
 ### Front-end
+
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [create-react-app](https://pt-br.reactjs.org/docs/create-a-new-react-app.html#create-react-app) - Criação do ambiente
@@ -53,11 +56,13 @@
 - [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
 
 ### Mobile
+
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://github.com/axios/axios) - Biblioteca que permite a realização de requisições para a API Node
 
 ## 🤔 Como contribuir
+
 - Faça um fork;
 - Crie um branch com a sua feature: `git checkout -b my-feature`;
 - Commit as mundanças: `git commit -m 'feat: My new feature'`;

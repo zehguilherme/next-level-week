@@ -6,6 +6,8 @@ import api from '../../services/api';
 import axios from 'axios';
 import { LeafletMouseEvent } from 'leaflet';
 
+import Dropzone from '../../components/Dropzone';
+
 import './styles.css';
 
 import logo from '../../assets/logo.svg';
@@ -31,9 +33,12 @@ const CreatePoint = () => {
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]); //armazenar as cidades
 
-  const [initialPosition, setInitialPosition] = useState<[number, number]>(
-    [0, 0]
-  ); //armazena a posição atual no mapa do usuário
+  const [initialPosition, setInitialPosition] = useState<[number, number]>([
+    0,
+    0,
+  ]); //armazena a posição atual no mapa do usuário
+
+  const [selectFile, setSelectFile] = useState<File>(); //armazena o arquivo do dropzone
 
   const [formData, setFormData] = useState({
     name: '',
@@ -44,9 +49,10 @@ const CreatePoint = () => {
   const [selectedUf, setSelectedUf] = useState('0'); //armazena a UF selecionada pelo usuário
   const [selectedCity, setSelectedCity] = useState('0'); //armazena a cidade selecionada pelo usuário
   const [selectedItems, setSelectedItems] = useState<number[]>([]); //armazena os itens selecionados pelo usuário
-  const [selectedPosition, setSelectedPosition] = useState<
-    [number, number]
-  >([0, 0]); //armazena a posição no mapa selecionada pelo usuário
+  const [selectedPosition, setSelectedPosition] = useState<[number, number]>([
+    0,
+    0,
+  ]); //armazena a posição no mapa selecionada pelo usuário
 
   const history = useHistory();
 
@@ -154,16 +160,21 @@ const CreatePoint = () => {
     const [latitude, longitude] = selectedPosition;
     const items = selectedItems;
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      uf,
-      city,
-      latitude,
-      longitude,
-      items,
-    };
+    const data = new FormData(); //usar formdata ao inves de json
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('items', items.join(','));
+
+    // Se o campo de imagem estiver preenchida
+    if (selectFile) {
+      data.append('image', selectFile);
+    }
 
     await api.post('/points', data);
 
@@ -187,6 +198,8 @@ const CreatePoint = () => {
         <h1>
           Cadastro do <br /> ponto de coleta
         </h1>
+
+        <Dropzone onFileUploaded={setSelectFile} />
 
         <fieldset>
           <legend>

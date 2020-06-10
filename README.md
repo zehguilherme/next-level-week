@@ -1,22 +1,30 @@
-<div align="center">
-    <img src=".github/logo.svg">
-</div>
+<p align="center">
+    <img src=".github/logo.svg" alt="Next Level Week">
+</p>
 
-<div align="center">
-    <img src=".github/capa.svg">
-</div>
+<p align="center">
+    <img src=".github/capa.svg" alt="Ecoleta">
+</p>
 
 <h4 align="center">
     Este projeto permite a conexão entre empresas ou entidades que coletam resíduos (orgânicos ou inorgânicos) às pessoas que precisam descartar esses resíduos.
 </h4>
 
-<div align="center">
+<p align="center">
     <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/zehguilherme/next-level-week">
     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/zehguilherme/next-level-week">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/zehguilherme/next-level-week">
     <a href="https://www.codacy.com/manual/zehguilherme/next-level-week?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zehguilherme/next-level-week&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/0f203f0e21d84588a400a6349f399f99"/></a>
     <img alt="GitHub" src="https://img.shields.io/github/license/zehguilherme/next-level-week">
-</div>
+</p>
+
+<p align="center">
+    <a href="#-anotações">Anotações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-começando">Começando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-licença">Licença</a>
+</p>
 
 ## 🗒 Anotações
 
@@ -77,13 +85,49 @@
 - [MailComposer](https://docs.expo.io/versions/latest/sdk/mail-composer/) - Email no expo
 - [React native picker select](https://www.npmjs.com/package/react-native-picker-select) - Uso de select no mobile
 
+## ⌛ Começando
+
+Você precisa ter instalado na sua máquina o `node` e o `npm`.
+
+Depois você pode clonar o repositório.
+
+`git clone https://github.com/zehguilherme/next-level-week.git`
+
+Primeiro inicie a aplicação backend.
+
+1. `cd backend`
+2. `npm install`
+3. `npm run dev`
+
+Depois inicie a aplicação frontend.
+
+1. `cd frontend`
+2. `npm install`
+3. `npm run start`
+
+Inicie a aplicação mobile (Expo).
+
+1. `cd mobile`
+2. `npm install`
+3. `npm run start`
+4. Pressione em `Run on Android device/emulator` ou `Run on iOS simulator`
+5. Outra opção é instalar o Expo no seu celular e escanear o QRCode.
+
+    [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent)
+
+    [App Store](https://apps.apple.com/br/app/expo-client/id982107779)
+
+*Para que a API funcione no celular, altere os campos que têm um IP fixo para o seu próprio IP.*
+
+
 ## 🤔 Como contribuir
 
-1. Faça um Fork do projeto;
-2. Crie um branch com a sua feature: `git checkout -b my-feature`;
-3. Commit as mundanças: `git commit -m 'feat: My new feature'`;
-4. Faça um Push para seu branch: `git push origin my-feature`;
-5. Crie um Pull Request.
+1. Faça um fork desse repositório;
+2. Crie uma branch com a sua feature: `git checkout -b minha-feature`;
+3. Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+4. Faça push para a sua branch: `git push origin minha-feature`;
+5. Crie um pull request;
+6. Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
 
 ## 📝 Licensa
 

@@ -23,7 +23,7 @@
     <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-começando">Começando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-licença">Licença</a>
+    <a href="#-licensa">Licensa</a>
 </p>
 
 ## 🗒 Anotações
@@ -131,7 +131,7 @@ Inicie a aplicação mobile (Expo).
 
 ## 📝 Licensa
 
-Este projeto está sob a licensa MIT. Veja a [licença](LICENSE) para mais informações.
+Este projeto está sob a licensa MIT. Veja a [licensa](LICENSE) para mais informações.
 
 ---
 

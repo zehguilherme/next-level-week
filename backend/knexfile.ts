@@ -4,10 +4,10 @@ module.exports = {
   client: 'sqlite3',
   connection: {
     filename: path.resolve(
-      __dirname, //__dirname: retorna o diretório do arquivo em que essa variável está sendo executada
+      __dirname, // __dirname: retorna o diretório do arquivo em que essa variável está sendo executada
       'src',
       'database',
-      'database.sqlite'
+      'database.sqlite',
     ),
   },
   migrations: {

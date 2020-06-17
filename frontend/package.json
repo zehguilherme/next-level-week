@@ -17,7 +17,9 @@
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "remask": "0.1.0-alpha.5",
+    "typescript": "~3.7.2",
+    "vanilla-masker": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.35",

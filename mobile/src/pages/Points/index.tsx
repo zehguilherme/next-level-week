@@ -1,3 +1,10 @@
+/* eslint-disable max-len */
+/* eslint-disable camelcase */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -40,7 +47,7 @@ interface Params {
 
 const Points = () => {
   const [items, setItems] = useState<Item[]>([]);
-  const [selectItems, setSelectItems] = useState<number[]>([]); //item que foram selecionados pelo usuário
+  const [selectedItems, setSelectedItems] = useState<number[]>([]); // item que foram selecionados pelo usuário
   const [points, setPoints] = useState<Point[]>([]);
 
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
@@ -49,31 +56,28 @@ const Points = () => {
   ]);
 
   const navigation = useNavigation();
+  const route = useRoute(); // Obter parametros da rota
 
-  const route = useRoute(); //Obter parametros da rota
-
-  const routeParams = route.params as Params; //define o formato como sendo o de Params
+  const routeParams = route.params as Params; // define o formato como sendo o de Params
 
   useEffect(() => {
     // Carregar posição do usuário
     async function loadPosition() {
-      const { status } = await Location.requestPermissionsAsync(); //status da permissão para usar a localização do usuário
+      const { status } = await Location.requestPermissionsAsync(); // status da permissão para usar a localização do usuário
 
       // Permissão negada
       if (status !== 'granted') {
         Alert.alert(
           'Ooops...',
-          'Precisamos da sua permissão para obter a localização'
+          'Precisamos de sua permissão para obter a localização',
         );
         return;
       }
 
       // Permissão aceita
-      const location = await Location.getCurrentPositionAsync(); //traz a localização do usuário
+      const location = await Location.getCurrentPositionAsync(); // traz a localização do usuário
 
       const { latitude, longitude } = location.coords;
-
-      console.log(latitude, longitude);
 
       setInitialPosition([latitude, longitude]);
     }
@@ -94,13 +98,13 @@ const Points = () => {
         params: {
           city: routeParams.city,
           uf: routeParams.uf,
-          items: selectItems,
+          items: selectedItems,
         },
       })
       .then((response) => {
         setPoints(response.data);
       });
-  }, [selectItems]); //deve acontecer sempre que o usuário selecionar/desselecionar um item
+  }, [selectedItems]); // deve acontecer sempre que o usuário selecionar/desselecionar um item
 
   // Voltar para a tela Home
   function handleNavigateBack() {
@@ -112,13 +116,15 @@ const Points = () => {
     navigation.navigate('Detail', { point_id: id });
   }
 
-  function handleSelectedItem(id: number) {
-    const alreadySelected = selectItems.findIndex((item) => item === id);
+  function handleSelectItem(id: number) {
+    const alreadySelected = selectedItems.findIndex((item) => item === id);
 
     if (alreadySelected >= 0) {
-      const filteredItems = selectItems.filter((item) => item !== id);
+      const filteredItems = selectedItems.filter((item) => item !== id);
+
+      setSelectedItems(filteredItems);
     } else {
-      setSelectItems([...selectItems, id]);
+      setSelectedItems([...selectedItems, id]);
     }
   }
 
@@ -135,7 +141,7 @@ const Points = () => {
         </Text>
 
         <View style={styles.mapContainer}>
-          {initialPosition[0] !== 0 && ( //caso a posição ja tenha sido carregada && queira mostrar algo
+          {initialPosition[0] !== 0 && ( // caso a posição ja tenha sido carregada && queira mostrar algo
             <MapView
               style={styles.map}
               initialRegion={{
@@ -182,9 +188,9 @@ const Points = () => {
               key={String(item.id)}
               style={[
                 styles.item,
-                selectItems.includes(item.id) ? styles.selectedItem : {}, //se incluir id do item, aplica o estilo de selecionado
+                selectedItems.includes(item.id) ? styles.selectedItem : {}, // se incluir id do item, aplica o estilo de selecionado
               ]}
-              onPress={() => handleSelectedItem(item.id)}
+              onPress={() => handleSelectItem(item.id)}
               activeOpacity={0.6}
             >
               <SvgUri width={42} height={42} uri={item.image_url} />

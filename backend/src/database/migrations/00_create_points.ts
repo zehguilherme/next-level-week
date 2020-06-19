@@ -1,7 +1,10 @@
-import Knex from 'knex'; //Letra maiúscula: tipo da variável
+// eslint-disable-next-line no-unused-vars
+import Knex from 'knex'; // Letra maiúscula: tipo da variável
 
-// Realizar alterações no banco
-// Criar tabela
+/*
+ * Realizar alterações no banco
+ * Criar tabela
+ */
 export async function up(knex: Knex) {
   return knex.schema.createTable('points', (table) => {
     table.increments('id').primary();
@@ -16,8 +19,10 @@ export async function up(knex: Knex) {
   });
 }
 
-// Desfazer alterações no banco - o contrário feito no up()
-// Deletar tabela
+/*
+ * Desfazer alterações no banco - o contrário feito no up()
+ * Deletar tabela
+ */
 export async function down(knex: Knex) {
   return knex.schema.dropTable('points');
 }

@@ -1,3 +1,9 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+
 import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
 import {
@@ -36,7 +42,7 @@ const Home = () => {
       <ImageBackground
         source={require('../../assets/home-background.png')}
         style={styles.container}
-        imageStyle={{ width: 274, height: 368 }} //estilo apenas da background image
+        imageStyle={{ width: 274, height: 368 }} // estilo apenas da background image
       >
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
@@ -45,7 +51,7 @@ const Home = () => {
               Seu marketplace de coleta de resíduos
             </Text>
             <Text style={styles.description}>
-              AJudamos pessoas a encontrarem pontos de coleta de forma
+              Ajudamos pessoas a encontrarem pontos de coleta de forma
               eficiente.
             </Text>
           </View>
@@ -57,8 +63,8 @@ const Home = () => {
             placeholder="Digite a UF"
             value={uf}
             maxLength={2}
-            autoCapitalize="characters" //todas as letras maiúsculas
-            autoCorrect={false} //não usar corretor ortográfico
+            autoCapitalize="characters" // todas as letras maiúsculas
+            autoCorrect={false} // não usar corretor ortográfico
             onChangeText={(text) => setUf(text)}
           />
           <TextInput

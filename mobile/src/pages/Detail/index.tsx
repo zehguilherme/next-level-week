@@ -1,3 +1,8 @@
+/* eslint-disable camelcase */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -13,6 +18,8 @@ import { RectButton } from 'react-native-gesture-handler';
 import * as MailComposer from 'expo-mail-composer';
 
 import api from '../../services/api';
+
+import styles from './styles';
 
 interface Params {
   point_id: number;
@@ -30,10 +37,8 @@ interface Data {
   };
   items: {
     title: string;
-  }[]; //vetor de objetos
+  }[]; // vetor de objetos
 }
-
-import styles from './styles';
 
 const Detail = () => {
   const [data, setData] = useState<Data>({} as Data);
@@ -41,7 +46,7 @@ const Detail = () => {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const routeParams = route.params as Params; //assume o formato de Params
+  const routeParams = route.params as Params; // assume o formato de Params
 
   useEffect(() => {
     api.get(`points/${routeParams.point_id}`).then((response) => {
@@ -57,14 +62,14 @@ const Detail = () => {
   // Whatsapp
   function handleWhatsapp() {
     Linking.openURL(
-      `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`
+      `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`,
     );
   }
 
   // E-mail
   function handleComposeEmail() {
     MailComposer.composeAsync({
-      subject: 'Interesse na coleta de resíduos', //assunto
+      subject: 'Interesse na coleta de resíduos', // assunto
       recipients: [data.point.email],
     });
   }

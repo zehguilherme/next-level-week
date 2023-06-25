@@ -16,7 +16,7 @@
     "react-icons": "^3.10.0",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "remask": "0.1.0-alpha.5",
     "typescript": "~3.7.2",
     "vanilla-masker": "^1.2.0"
@@ -28,9 +28,9 @@
     "@types/react-router-dom": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.43.0",
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1"
